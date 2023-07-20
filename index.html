@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #loginForm, #signupForm {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+      color: white;
+      background-color: black;
+    }
+
+    #loginForm.visible, #signupForm.visible {
+      display: block;
+    }
+
+    #toggleButton {
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Singup and login form</h1>
+
+  <div id="loginForm" class="visible">
+    <h2>Login</h2>
+    <form>
+      <label for="loginUsername">Username:</label>
+      <input type="text" id="loginUsername" required>
+      <br><br>
+      <label for="loginPassword">Password:</label>
+      <input type="password" id="loginPassword" required>
+      <br><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="toggleButton">
+      Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+    </div>
+  </div>
+
+  <div id="signupForm">
+    <h2>Sign Up</h2>
+    <form>
+      <label for="signupUsername">Username:</label>
+      <input type="text" id="signupUsername" required>
+      <br><br>
+      <label for="signupEmail">Email:</label>
+      <input type="email" id="signupEmail" required>
+      <br><br>
+      <label for="signupPassword">Password:</label>
+      <input type="password" id="signupPassword" required>
+      <br><br>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div id="toggleButton">
+      Already have an account? <a href="#" onclick="toggleForm()">Login</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm() {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+
+      loginForm.classList.toggle('visible');
+      signupForm.classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
